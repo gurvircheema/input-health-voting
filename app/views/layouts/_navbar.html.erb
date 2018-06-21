@@ -1,0 +1,12 @@
+<div class="navbar">
+
+  <div class="logo-container">
+    <%= image_tag("logo", class: "logo") %>
+  </div>
+
+
+  <ul class="right-section">
+    <li class='action'> <%= current_user.email %> </li>
+    <li class='action'><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+  </ul>
+</div>

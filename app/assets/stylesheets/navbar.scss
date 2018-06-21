@@ -1,0 +1,29 @@
+.navbar {
+  height: 46px;
+  position: absolute;
+  right: 0px; left: 0px; top: 0px;
+  border-bottom: 1px solid #ccc;
+
+
+  .right-section {
+    position: absolute;
+    right: 0px; top: 0px;
+    height: 100%;
+    line-height: 46px;
+    padding: 0px 12px;
+
+  }
+
+
+  .action {
+    display: inline-block; padding: 0px 10px;
+    border-right: 1px solid #ccc;
+    &:last-child { border-right: none; }
+  }
+
+  .logo-container {
+    height: 46px; padding: 5px 16px; margin-top: -2px;
+    .logo { height: 100%;}
+  }
+
+}

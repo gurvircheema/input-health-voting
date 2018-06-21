@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IhInterview</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <div class="application">
+      <% if current_user %> <%= render 'layouts/navbar' %> <% end %>
+      <div class="content-wrap <%= controller_name %>"><%= yield %></div>
+    </div>
+  </body>
+</html>
