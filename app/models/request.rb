@@ -11,9 +11,10 @@ class Request < ApplicationRecord
   end
 
   after_update do
-    return unless saved_change_to_attribute?(:upvote)
-    FeatureRequest.increment_counter(feature_request_column, feature_request.id)
-    FeatureRequest.decrement_counter(inverse_feature_request_column, feature_request.id)
+    if saved_change_to_attribute?(:upvote)
+      FeatureRequest.increment_counter(feature_request_column, feature_request.id)
+      FeatureRequest.decrement_counter(inverse_feature_request_column, feature_request.id)
+    end
   end
 
   private

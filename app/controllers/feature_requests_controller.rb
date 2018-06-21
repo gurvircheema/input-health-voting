@@ -2,7 +2,7 @@ class FeatureRequestsController < ApplicationController
   before_action :set_feature_request, only: [:show, :edit, :update, :destroy]
 
   def index
-    @feature_requests = FeatureRequest.all
+    @feature_requests = FeatureRequest.all.order(:created_at)
   end
 
   def show; end
