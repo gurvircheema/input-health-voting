@@ -14,10 +14,10 @@
         </div>
         <div class="metadata">
           <span class="info">
-            Difficulty: <% feature_request.difficulty %> / 10
+            Difficulty: <%= feature_request.difficulty %> / 10
           </span>
           <span class="info">
-            Created By: <%= feature_request.created_by_user_id %>
+            Created By: <%= feature_request.created_by_user.email %>
           </span>
         </div>
     </div>

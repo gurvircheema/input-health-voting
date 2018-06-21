@@ -13,15 +13,20 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :feature_request_name %>
+    <%= form.text_field :name, id: :feature_request_name, placeholder: 'Feature Name' %>
   </div>
 
   <div class="field">
-    <%= form.label :created_by_user_id %>
-    <%= form.text_field :created_by_user_id, id: :feature_request_created_by_user_id %>
+    <%= form.label :details %>
+    <%= form.text_area :details, rows: 5, id: :feature_request_details, placeholder: 'Feature Request Details' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :difficulty %>
+    <%= form.select :difficulty, (1..10).collect { |n| [n, n]}, id: :feature_request_difficulty %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create', class: 'button' %>
   </div>
 <% end %>

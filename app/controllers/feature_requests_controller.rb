@@ -5,21 +5,17 @@ class FeatureRequestsController < ApplicationController
     @feature_requests = FeatureRequest.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @feature_request = FeatureRequest.new
   end
 
-
-  def edit
-  end
-
+  def edit; end
 
   def create
     @feature_request = FeatureRequest.new(feature_request_params)
-
+    @feature_request.created_by_user_id = current_user.id
     respond_to do |format|
       if @feature_request.save
         format.html { redirect_to @feature_request, notice: 'Feature request was successfully created.' }
@@ -43,7 +39,6 @@ class FeatureRequestsController < ApplicationController
     end
   end
 
-
   def destroy
     @feature_request.destroy
     respond_to do |format|
@@ -54,11 +49,11 @@ class FeatureRequestsController < ApplicationController
 
   private
 
-    def set_feature_request
-      @feature_request = FeatureRequest.find(params[:id])
-    end
+  def set_feature_request
+    @feature_request = FeatureRequest.find(params[:id])
+  end
 
-    def feature_request_params
-      params.require(:feature_request).permit(:name, :created_by_user_id)
-    end
+  def feature_request_params
+    params.require(:feature_request).permit(:name, :details, :difficulty)
+  end
 end
