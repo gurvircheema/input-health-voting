@@ -1,34 +1,6 @@
-
-<div class="feature-requests">
-  <% @feature_requests.each do |feature_request| %>
-    <div class="card-item feature-request">
-        <div class="row">
-          <div class="medium-12 columns">
-            <div class="name"><%= feature_request.name %> </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="medium-12 columns">
-            <div class="details"><%= feature_request.details || "No Details" %> </div>
-          </div>
-        </div>
-        <div class="metadata">
-          <span class="info">
-            Difficulty: <%= feature_request.difficulty %> / 10
-          </span>
-          <span class="info">
-            Created By: <%= feature_request.created_by_user.email %>
-          </span>
-        </div>
-    </div>
-  <% end %>
+<div class="feature-requests" id="feature-requests-app">
 </div>
 
+<%= link_to "New Feature Request", new_feature_request_path %>
 
-<%= link_to 'New Feature Request', new_feature_request_path %>
-
-
-<script>
-  console.log("Start your JS app here....") // - Jimmy
-  // i.e new MyApplication()
-</script>
+<%= javascript_pack_tag 'feature_request_voting' %>
