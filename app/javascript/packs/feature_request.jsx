@@ -17,15 +17,30 @@ class FeatureRequest extends React.Component {
       <div className="card-item feature-request">
         <div className="grid-x">
           <div className="small-2 cell">
-            <button className="button small" onClick={e => handleUpvote(id)}>
-              Upvote ({upvotes})
-            </button>
-            <button
-              className="button small secondary"
-              onClick={e => handleDownvote(id)}
-            >
-              Downvote ({downvotes})
-            </button>
+            <div className="grid-y">
+              <div className="cell">
+                <span
+                  className="button tiny no-margin"
+                  onClick={e => handleUpvote(id)}
+                >
+                  <i className="fa fa-thumbs-o-up" aria-hidden="true" />
+                </span>
+                <span className="left-margin-5">
+                  <small>Upvotes ({upvotes})</small>
+                </span>
+              </div>
+              <div className="cell">
+                <span
+                  className="button secondary tiny no-margin"
+                  onClick={e => handleDownvote(id)}
+                >
+                  <i className="fa fa-thumbs-o-down" aria-hidden="true" />
+                </span>
+                <span className="left-margin-5">
+                  <small>Downvotes ({downvotes})</small>
+                </span>
+              </div>
+            </div>
           </div>
           <div className="small-10 cell">
             <div className="row">

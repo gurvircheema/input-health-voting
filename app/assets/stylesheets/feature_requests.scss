@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .feature-requests {
   padding: 20px;
 
@@ -10,17 +9,32 @@
     position: relative;
     padding: 40px 20px;
 
-
     padding-bottom: 32px + 12px;
     padding-top: 20px;
 
-    .details { font-size: 14px; color: gray; }
-  }
+    .details {
+      font-size: 14px;
+      color: gray;
+    }
 
+    .no-margin {
+      margin: 0;
+    }
+
+    .left-margin-5 {
+      margin-left: 5px;
+    }
+
+    .fa {
+      cursor: pointer;
+    }
+  }
 
   .metadata {
     position: absolute;
-    bottom: 0px; right: 0px; left: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
     height: 32px;
     font-size: 12px;
     line-height: 32px;
@@ -29,16 +43,8 @@
     color: #9f9b9b;
     background: #ebebeb;
 
-
     .info {
       padding: 5px;
     }
-
-
-
   }
-
-
-
-
 }
